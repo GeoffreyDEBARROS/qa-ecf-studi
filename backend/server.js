@@ -2,6 +2,11 @@ const mysql = require("mysql");
 const express = require("express");
 const usersRouter = require("./routes/usersRoutes");
 const startersRouter = require("./routes/startersRoutes");
+const dishesRouter = require("./routes/dishesRoutes");
+const dessertsRouter = require("./routes/dessertsRoutes");
+const scheduleRouter = require("./routes/scheduleRoutes");
+
+
 
 const port = 3001;
 const app = express();
@@ -10,6 +15,10 @@ app.use(express.json()); // Middleware pour le parsing du corps de la requête e
 
 app.use(usersRouter);
 app.use(startersRouter);
+app.use(dishesRouter);
+app.use(dessertsRouter);
+app.use(scheduleRouter);
+
 // Créer une connexion à la base de données
 const db = mysql.createConnection({
   host: "127.0.0.1",
