@@ -1,11 +1,11 @@
 import React from "react";
 
-const Card = () => {
+const Login = () => {
   return (
     <div>
-      <h2>La carte</h2>
+      <h2>Connexion</h2>
     </div>
   );
 };
 
-export default Card;
+export default Login;

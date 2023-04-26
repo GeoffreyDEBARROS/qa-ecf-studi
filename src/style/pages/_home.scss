@@ -1,0 +1,59 @@
+.home {
+    height: 100%;
+
+    h1 {
+        text-align: center;
+        padding: 10px;
+        letter-spacing: 1.5px;
+        color: $color3;
+    }
+
+    img {
+        transform: translateX(-235px);
+    transition: transform 0.5s ease-in-out;
+    animation: rotate 30s linear infinite;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;  
+        height: 100%;
+
+        .reserv-btn {
+            padding: 10px;
+            height: 50px;
+            width: 150px;
+            border: none;
+            letter-spacing: 2px;
+            font-weight: bold;
+            border-radius: 5px;
+            color: $color2;
+            background: $color3;
+            transition: 0.4s;
+        }
+    }
+}
+///  Animation home image  ///
+@keyframes rotate {
+    from {
+      transform: translateX(-235px) rotate(0deg);
+    }
+    to {
+      transform: translateX(-235px) rotate(360deg); 
+    }
+  }
+
+///   Animation reservation button   ///
+.nav-reserve-btn {
+    padding: 10px;
+    height: 70px;
+    width: 100%;
+    border: none;
+    letter-spacing: 3px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: 5px;
+    color: $color2;
+    background: rgba(222, 44, 44, 0.928);
+    transition: 0.4s;
+}

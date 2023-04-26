@@ -1,0 +1,25 @@
+$color1: #9FC088;
+$color2: #E8C07D;
+$color3: #CC704B;
+$color4: #614124;
+
+@font-face {
+    font-family: font1;
+    src: url(../assets/fonts/Pridi-Regular.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    overflow-x: hidden;
+    font-family: font1;
+}
+body {
+    height: 100vh;
+    background: white;  
+}
+
+
