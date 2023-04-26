@@ -5,8 +5,7 @@ const startersRouter = require("./routes/startersRoutes");
 const dishesRouter = require("./routes/dishesRoutes");
 const dessertsRouter = require("./routes/dessertsRoutes");
 const scheduleRouter = require("./routes/scheduleRoutes");
-
-
+require("dotenv").config();
 
 const port = 3001;
 const app = express();
@@ -20,12 +19,16 @@ app.use(dessertsRouter);
 app.use(scheduleRouter);
 
 // Créer une connexion à la base de données
-const db = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "ROOT",
-  database: "quai_antique_db",
-});
+// const db = mysql.createConnection({
+//   host: "127.0.0.1",
+//   user: "root",
+//   password: "ROOT",
+//   database: "quai_antique_db",
+// });
+
+const urlDB = `mysql://root:oAfrNFzZWZ0ajP4xWm8e@containers-us-west-126.railway.app:7171/railway`;
+
+const db = mysql.createConnection(urlDB);
 
 // Connecter à la base de données
 db.connect((err) => {
