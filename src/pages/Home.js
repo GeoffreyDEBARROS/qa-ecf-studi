@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navigation from "../components/Navigation";
+import Galerie from "../components/Galerie";
 
 const Home = () => {
   const [isImgVisible, setIsImgVisible] = useState(false);
@@ -23,13 +24,12 @@ const Home = () => {
         />
 
         <div className="btn-container">
-          <button
-            className={isReserveRed ? "nav-reserve-btn" : "reserv-btn"}
-          >
+          <button className={isReserveRed ? "nav-reserve-btn" : "reserv-btn"}>
             RESERVER
           </button>
         </div>
       </div>
+      <Galerie />
     </div>
   );
 };
