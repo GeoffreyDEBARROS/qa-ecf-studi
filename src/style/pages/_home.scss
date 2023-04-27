@@ -33,23 +33,12 @@
             color: $color2;
             background: $color3;
             transition: 0.4s;
+
+            &:active {
+                transform: scale(110%);
+            }
         }
     }
 }
 
-///   Animation reservation button   ///
-.nav-reserve-btn {
-    padding: 10px;
-    height: 10vh;
-    width: 100%;
-    border: none;
-    letter-spacing: 3px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    border-radius: 5px;
-    color: $color2;
-    background: rgba(222, 44, 44, 0.928);
-    transition: 0.4s;
-    position: absolute;
-    top: 75vh;
-}
+

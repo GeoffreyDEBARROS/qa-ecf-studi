@@ -5,6 +5,10 @@
     border-bottom: 2px dashed $color3;
     margin-bottom: 20px;
 
+    img {
+        border-radius: 5px;
+    }
+
     .pics1 {
         transform: translateX(100px);
         transition: 0.3s;

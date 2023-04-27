@@ -7,7 +7,6 @@ const Navigation = ({ handleImageMove }) => {
 
   const handleClick = () => {
     setIsNavigationOpen(!isNavigationOpen);
-    handleImageMove()
   };
 
   return (
