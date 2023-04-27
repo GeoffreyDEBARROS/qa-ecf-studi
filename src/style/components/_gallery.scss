@@ -1,0 +1,43 @@
+.gallery {
+    display: grid;
+    justify-content: center;
+    grid-gap: 5px;
+
+    .pics {
+        img {
+            border-radius: 10px;
+        }
+    }
+
+    .pics1 {
+        transform: translateX(100px);
+        transition: 0.3s;
+        &:hover {
+            transform: translateX(0) scale(120%);
+        }
+    }
+    .pics2 {
+        transform: translateX(-100px);
+        transition: 0.3s;
+        position: relative;
+        &:hover {
+            transform: translateX(0) scale(110%);
+        }
+    }
+    .pics3 {
+        transform: translateX(100px);
+        transition: 0.3s;
+        &:hover {
+            transform: translateX(0) scale(110%);
+            z-index: 10;
+        }
+    }
+    .pics4 {
+        transform: translateX(-100px);
+        transition: 0.3s;
+        &:hover {
+            transform: translateX(0) scale(110%);
+            z-index: 10;
+        }
+    }
+}

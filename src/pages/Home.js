@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navigation from "../components/Navigation";
-import Galerie from "../components/Galerie";
+import Gallery from "../components/Gallery";
 
 const Home = () => {
   const [isImgVisible, setIsImgVisible] = useState(false);
@@ -29,7 +29,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <Galerie />
+      <Gallery />
     </div>
   );
 };
