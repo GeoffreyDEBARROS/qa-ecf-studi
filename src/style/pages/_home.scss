@@ -9,9 +9,7 @@
     }
 
     img {
-        transform: translateX(-235px);
-    transition: transform 0.5s ease-in-out;
-    // animation: rotate 30s linear infinite;
+        transform: translateX(-215px);
     }
 
     .btn-container {
@@ -35,15 +33,6 @@
         }
     }
 }
-///  Animation home image  ///
-@keyframes rotate {
-    from {
-      transform: translateX(-235px) rotate(0deg);
-    }
-    to {
-      transform: translateX(-235px) rotate(360deg); 
-    }
-  }
 
 ///   Animation reservation button   ///
 .nav-reserve-btn {
@@ -58,4 +47,6 @@
     color: $color2;
     background: rgba(222, 44, 44, 0.928);
     transition: 0.4s;
+    position: absolute;
+    top: 75vh;
 }

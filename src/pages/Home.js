@@ -19,7 +19,7 @@ const Home = () => {
         <img
           src={require("../assets/img/home.png")}
           alt="Un plat"
-          height="600px"
+          height="580px"
           className={`img-visible ${isImgVisible ? "img-hidden" : ""}`}
         />
 
