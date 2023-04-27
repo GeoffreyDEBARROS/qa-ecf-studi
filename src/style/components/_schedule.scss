@@ -1,0 +1,28 @@
+.schedule {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+
+    .days {
+        color: $color4;
+        padding: 10px;
+        text-align: center;
+
+        h5 {
+            font-size: 1rem;
+            color: $color3;
+        }
+    }
+
+    button {
+        height: 50%;
+        width: 80%;
+        margin: 22px;
+        border: none;
+        letter-spacing: 2px;
+        font-weight: bold;
+        border-radius: 5px;
+        color: $color2;
+        background: $color3;
+    }
+}

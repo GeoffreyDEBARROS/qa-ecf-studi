@@ -1,5 +1,6 @@
 const mysql = require("mysql");
 const express = require("express");
+const cors = require("cors");
 const usersRouter = require("./routes/usersRoutes");
 const startersRouter = require("./routes/startersRoutes");
 const dishesRouter = require("./routes/dishesRoutes");
@@ -12,6 +13,8 @@ const app = express();
 
 app.use(express.json()); // Middleware pour le parsing du corps de la requête en JSON
 
+app.use(cors());
+
 app.use(usersRouter);
 app.use(startersRouter);
 app.use(dishesRouter);
@@ -19,16 +22,16 @@ app.use(dessertsRouter);
 app.use(scheduleRouter);
 
 // Créer une connexion à la base de données
-// const db = mysql.createConnection({
-//   host: "127.0.0.1",
-//   user: "root",
-//   password: "ROOT",
-//   database: "quai_antique_db",
-// });
+const db = mysql.createConnection({
+  host: "127.0.0.1",
+  user: "root",
+  password: "ROOT",
+  database: "quai_antique_db",
+});
 
-const urlDB = `mysql://root:oAfrNFzZWZ0ajP4xWm8e@containers-us-west-126.railway.app:7171/railway`;
+// const urlDB = `mysql://root:oAfrNFzZWZ0ajP4xWm8e@containers-us-west-126.railway.app:7171/railway`;
 
-const db = mysql.createConnection(urlDB);
+// const db = mysql.createConnection(urlDB);
 
 // Connecter à la base de données
 db.connect((err) => {

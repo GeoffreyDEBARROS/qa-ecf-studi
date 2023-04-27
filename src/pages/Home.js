@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navigation from "../components/Navigation";
 import Gallery from "../components/Gallery";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [isImgVisible, setIsImgVisible] = useState(false);
@@ -30,6 +31,7 @@ const Home = () => {
         </div>
       </div>
       <Gallery />
+      <Footer />
     </div>
   );
 };

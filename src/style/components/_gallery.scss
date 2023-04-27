@@ -2,12 +2,8 @@
     display: grid;
     justify-content: center;
     grid-gap: 5px;
-
-    .pics {
-        img {
-            border-radius: 10px;
-        }
-    }
+    border-bottom: 2px dashed $color3;
+    margin-bottom: 20px;
 
     .pics1 {
         transform: translateX(100px);
@@ -21,14 +17,14 @@
         transition: 0.3s;
         position: relative;
         &:hover {
-            transform: translateX(0) scale(110%);
+            transform: translateX(0) scale(120%);
         }
     }
     .pics3 {
         transform: translateX(100px);
         transition: 0.3s;
         &:hover {
-            transform: translateX(0) scale(110%);
+            transform: translateX(0) scale(120%);
             z-index: 10;
         }
     }
@@ -36,7 +32,7 @@
         transform: translateX(-100px);
         transition: 0.3s;
         &:hover {
-            transform: translateX(0) scale(110%);
+            transform: translateX(0) scale(120%);
             z-index: 10;
         }
     }
