@@ -5,6 +5,7 @@ import Login from "./pages/Login"
 import Infos from "./pages/Infos"
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Signin from "./pages/Signin";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/carte" element={<Card />} />
         <Route path="/connexion" element={<Login />} />
         <Route path="/informations" element={<Infos />} />
+        <Route path="/créer-un-compte" element={<Signin />} />
       </Routes>
     </BrowserRouter>
   );
