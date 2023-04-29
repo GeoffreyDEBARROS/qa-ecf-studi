@@ -7,7 +7,6 @@ require("dotenv").config();
 
 const secretKey = process.env.SECRET_KEY;
 
-
 const db = mysql.createConnection({
   host: "127.0.0.1",
   user: "root",
@@ -17,10 +16,10 @@ const db = mysql.createConnection({
 
 ///   Route POST pour ajouter un client dans la base de données   ///
 router.post("/users", (req, res) => {
-  const { email, password, default_guests, name } = req.body;
+  const { name, email, password, default_guests } = req.body;
   // Vérifier que le mot de passe a au moins 8 caractères, avec au moins un chiffre et une majuscule
   const passwordRegex = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
-  if (!password.match(passwordRegex)) {
+  if (!passwordRegex.test(password)) {
     res.status(400).json({
       error:
         "Le mot de passe doit contenir au moins 8 caractères, avec au moins un chiffre et une majuscule",
@@ -46,8 +45,8 @@ router.post("/users", (req, res) => {
 
       // Requête SQL pour ajouter le client avec le mot de passe hashé dans la base de données
       const sql =
-        "INSERT INTO users (email, password, default_Guests, name) VALUES (?, ?, ?, ?)";
-      db.query(sql, [email, hash, default_guests, name], (err, result) => {
+        "INSERT INTO users (name, email, password, default_Guests) VALUES (?, ?, ?, ?)";
+      db.query(sql, [name, email, hash, default_guests], (err, result) => {
         if (err) {
           console.error("Erreur lors de l'ajout du client :", err);
           res

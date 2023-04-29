@@ -11,7 +11,7 @@ require("dotenv").config();
 const port = 3001;
 const app = express();
 
-app.use(express.json()); // Middleware pour le parsing du corps de la requête en JSON
+app.use(express.json()); 
 
 app.use(cors());
 
@@ -28,10 +28,6 @@ const db = mysql.createConnection({
   password: "ROOT",
   database: "quai_antique_db",
 });
-
-// const urlDB = `mysql://root:oAfrNFzZWZ0ajP4xWm8e@containers-us-west-126.railway.app:7171/railway`;
-
-// const db = mysql.createConnection(urlDB);
 
 // Connecter à la base de données
 db.connect((err) => {
