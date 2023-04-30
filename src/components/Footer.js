@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const [schedule, setSchedule] = useState([]);
@@ -28,7 +29,9 @@ const Footer = () => {
         </div>
       ))}
 
-      <button>RESERVER</button>
+      <NavLink to="/reservation">
+        <button className="reserv-btn">RESERVER</button>
+      </NavLink>
     </div>
   );
 };

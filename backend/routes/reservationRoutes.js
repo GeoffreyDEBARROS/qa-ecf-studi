@@ -10,10 +10,10 @@ const db = mysql.createConnection({
 });
 
 router.post("/reservations", (req, res) => {
-  const date = "2023-05-01";
-  const hour = "12:30:00";
-  const email = "geo@gmail.com";
-  const guests = 4;
+  const date = req.body.date;
+  const hour = req.body.hour;
+  const email = req.body.email;
+  const guests = req.body.default_guests;
 
   // Vérifier que les données ont été fournies
   if (!date || !hour || !email || !guests) {

@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 20px;
+    border-top: 2px dashed $color3;
+    margin-top: 10px;
 
     .days {
         color: $color4;

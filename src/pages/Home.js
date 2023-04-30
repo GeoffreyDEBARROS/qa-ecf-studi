@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import Navigation from "../components/Navigation";
 import Gallery from "../components/Gallery";
 import Footer from "../components/Footer";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
-  
-
   return (
     <div>
       <Navigation />
@@ -19,9 +18,9 @@ const Home = () => {
         />
 
         <div className="btn-container">
-          <button className="reserv-btn">
-            RESERVER
-          </button>
+          <NavLink to="/reservation">
+            <button className="reserv-btn">RESERVER</button>
+          </NavLink>
         </div>
       </div>
       <Gallery />

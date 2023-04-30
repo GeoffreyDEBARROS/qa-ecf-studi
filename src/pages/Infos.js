@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import Navigation from "../components/Navigation";
 
 const Infos = () => {
-    return (
-        <div>
-            <h2>Infos</h2>
-        </div>
-    );
+  return (
+    <div>
+      <Navigation />
+      <h2>Infos</h2>
+    </div>
+  );
 };
 
 export default Infos;
