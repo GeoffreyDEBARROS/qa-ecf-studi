@@ -6,12 +6,14 @@ const startersRouter = require("./routes/startersRoutes");
 const dishesRouter = require("./routes/dishesRoutes");
 const dessertsRouter = require("./routes/dessertsRoutes");
 const scheduleRouter = require("./routes/scheduleRoutes");
+const reservationRouter = require("./routes/reservationRoutes");
+
 require("dotenv").config();
 
 const port = 3001;
 const app = express();
 
-app.use(express.json()); 
+app.use(express.json());
 
 app.use(cors());
 
@@ -20,6 +22,7 @@ app.use(startersRouter);
 app.use(dishesRouter);
 app.use(dessertsRouter);
 app.use(scheduleRouter);
+app.use(reservationRouter);
 
 // Créer une connexion à la base de données
 const db = mysql.createConnection({
