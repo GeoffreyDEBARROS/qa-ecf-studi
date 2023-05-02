@@ -17,6 +17,10 @@ const db = mysql.createConnection({
 ///   Route POST pour ajouter un client dans la base de données   ///
 router.post("/users", (req, res) => {
   const { name, email, password, default_guests } = req.body;
+  // name = "Geo";
+  // email = "g@gmail.com";
+  // password = "Abcd1234";
+  // default_guests = 2;
   // Vérifier que le mot de passe a au moins 8 caractères, avec au moins un chiffre et une majuscule
   const passwordRegex = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
   if (!passwordRegex.test(password)) {
