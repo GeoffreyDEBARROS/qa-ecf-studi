@@ -1,16 +1,18 @@
-import React, { useState } from "react";
-import Home from "../pages/Home";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
-const Navigation = ({ handleImageMove }) => {
+const Navigation = () => {
   const [isNavigationOpen, setIsNavigationOpen] = useState(false);
-
   const handleClick = () => {
     setIsNavigationOpen(!isNavigationOpen);
   };
 
+  const userName = localStorage.getItem("name");
+
   return (
     <div className="nav-container">
+      <span>{userName}</span>
       <div className="nav-btn">
         <img
           src="/img/burgerBtn.svg.png"

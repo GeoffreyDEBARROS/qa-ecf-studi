@@ -17,10 +17,7 @@ const db = mysql.createConnection({
 ///   Route POST pour ajouter un client dans la base de données   ///
 router.post("/users", (req, res) => {
   const { name, email, password, default_guests } = req.body;
-  // name = "Geo";
-  // email = "g@gmail.com";
-  // password = "Abcd1234";
-  // default_guests = 2;
+  console.log(req.headers["content-type"])
   // Vérifier que le mot de passe a au moins 8 caractères, avec au moins un chiffre et une majuscule
   const passwordRegex = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
   if (!passwordRegex.test(password)) {
@@ -30,7 +27,7 @@ router.post("/users", (req, res) => {
     });
     return;
   }
-
+  
   // Générer un sel pour le hachage
   bcrypt.genSalt(10, (err, salt) => {
     if (err) {
@@ -59,7 +56,6 @@ router.post("/users", (req, res) => {
           return;
         }
         console.log("Client ajouté avec succès !");
-        res.json({ message: "Client ajouté avec succès !" });
       });
     });
   });
@@ -99,8 +95,8 @@ router.post("/login", (req, res) => {
 
       // Les mots de passe correspondent, générer un token d'authentification
       // et renvoyer les informations du client connecté
-      const token = jwt.sign({ id, email }, secretKey, { expiresIn: "1h" });
       const { id, email, default_guests, name } = results[0];
+      const token = jwt.sign({ id, email }, secretKey, { expiresIn: "1h" });
       res.json({ token, id, email, default_guests, name });
     });
   });

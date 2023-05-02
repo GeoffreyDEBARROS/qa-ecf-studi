@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const express = require("express");
 const cors = require("cors");
+const bodyParser = require('body-parser');
 const usersRouter = require("./routes/usersRoutes");
 const startersRouter = require("./routes/startersRoutes");
 const dishesRouter = require("./routes/dishesRoutes");
@@ -14,6 +15,7 @@ const port = 3001;
 const app = express();
 
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 

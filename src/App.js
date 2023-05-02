@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Home from "./pages/Home";
-import Card from "./pages/Card"
-import Login from "./pages/Login"
-import Infos from "./pages/Infos"
+import Card from "./pages/Card";
+import Login from "./pages/Login";
+import Infos from "./pages/Infos";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Signin from "./pages/Signin";
 import Reservation from "./pages/Reservation";
