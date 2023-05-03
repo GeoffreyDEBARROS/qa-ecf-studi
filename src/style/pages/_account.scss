@@ -1,0 +1,58 @@
+.account {
+    height: 90vh;
+
+    .accountInfos {
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+            text-align: center;
+            color: $color3;
+            font-size: 0.8rem;
+        }
+
+        .userInfos {
+            display: flex;
+            flex-direction: column;
+            color: $color3;
+
+            input {
+                margin: 10px 0;
+                border: none;
+                padding: 5px;
+                border-radius: 5px;
+                background: $color3;
+                color: $color2;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            button {
+                margin-bottom: 15px;
+                border: none;
+                padding: 5px;
+                border-radius: 5px;
+                font-family: font1;
+                background: $color1;
+                color: $color4;
+            }
+        }
+
+        #decoAccount, #deleteAccount {
+            margin-bottom: 15px;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            font-family: font1;
+            margin-top: 10px;
+            background: rgba(255, 0, 0, 0.584);
+            font-weight: bold;
+        }
+    }
+}
+

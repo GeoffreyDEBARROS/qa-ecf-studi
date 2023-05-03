@@ -17,7 +17,7 @@ const db = mysql.createConnection({
 ///   Route POST pour ajouter un client dans la base de données   ///
 router.post("/users", (req, res) => {
   const { name, email, password, default_guests } = req.body;
-  console.log(req.headers["content-type"])
+  console.log(req.headers["content-type"]);
   // Vérifier que le mot de passe a au moins 8 caractères, avec au moins un chiffre et une majuscule
   const passwordRegex = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
   if (!passwordRegex.test(password)) {
@@ -27,7 +27,7 @@ router.post("/users", (req, res) => {
     });
     return;
   }
-  
+
   // Générer un sel pour le hachage
   bcrypt.genSalt(10, (err, salt) => {
     if (err) {
@@ -201,6 +201,140 @@ router.put("/users/:id", (req, res) => {
       res.json({ message: "Client mis à jour avec succès" });
     }
   );
+});
+
+///   Route pour modifier le name du client   ///
+router.put("/users/:id/name", (req, res) => {
+  const userId = req.params.id;
+  const name = req.body.name;
+
+  const sql = "UPDATE users SET name = ? WHERE id = ?";
+  db.query(sql, [name, userId], (err, result) => {
+    if (err) {
+      console.error("Erreur lors de la mise à jour du prénom du client :", err);
+      res
+        .status(500)
+        .json({ error: "Erreur lors de la mise à jour du prénom du client" });
+      return;
+    }
+    if (result.affectedRows === 0) {
+      res.status(404).json({ error: "Client non trouvé" });
+      return;
+    }
+    console.log("Prénom du client mis à jour avec succès");
+    res.json({ message: "Prénom du client mis à jour avec succès" });
+  });
+});
+
+///   Route pour modifier le email du client   ///
+router.put("/users/:id/email", (req, res) => {
+  const userId = req.params.id;
+  const email = req.body.email;
+
+  const sql = "UPDATE users SET email = ? WHERE id = ?";
+  db.query(sql, [email, userId], (err, result) => {
+    if (err) {
+      console.error(
+        "Erreur lors de la mise à jour de l'email du client :",
+        err
+      );
+      res
+        .status(500)
+        .json({ error: "Erreur lors de la mise à jour de l'email du client" });
+      return;
+    }
+    if (result.affectedRows === 0) {
+      res.status(404).json({ error: "Client non trouvé" });
+      return;
+    }
+    console.log("Email du client mis à jour avec succès");
+    res.json({ message: "Email du client mis à jour avec succès" });
+  });
+});
+
+///   Route pour modifier les default_guests du client   ///
+router.put("/users/:id/default_guests", (req, res) => {
+  const userId = req.params.id;
+  const default_guests = req.body.default_guests;
+
+  const sql = "UPDATE users SET default_guests = ? WHERE id = ?";
+  db.query(sql, [default_guests, userId], (err, result) => {
+    if (err) {
+      console.error(
+        "Erreur lors de la mise à jour des convives du client :",
+        err
+      );
+      res.status(500).json({
+        error: "Erreur lors de la mise à jour des convives du client",
+      });
+      return;
+    }
+    if (result.affectedRows === 0) {
+      res.status(404).json({ error: "Client non trouvé" });
+      return;
+    }
+    console.log("Convives du client mis à jour avec succès");
+    res.json({ message: "Convives du client mis à jour avec succès" });
+  });
+});
+
+///   Route pour modifier le mot de passe du client   ///
+router.put("/users/:id/password", (req, res) => {
+  const userId = req.params.id;
+  const newPassword = req.body.password;
+
+  // Vérifier que le mot de passe a au moins 8 caractères, avec au moins un chiffre et une majuscule
+  const passwordRegex = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
+  if (!passwordRegex.test(newPassword)) {
+    res.status(400).json({
+      error:
+        "Le mot de passe doit contenir au moins 8 caractères, avec au moins un chiffre et une majuscule",
+    });
+    return;
+  }
+
+  // Générer un sel pour le hachage
+  bcrypt.genSalt(10, (err, salt) => {
+    if (err) {
+      console.error("Erreur lors de la génération du sel :", err);
+      res
+        .status(500)
+        .json({ error: "Erreur lors de la modification du mot de passe" });
+      return;
+    }
+
+    // Hacher le nouveau mot de passe avec le sel généré
+    bcrypt.hash(newPassword, salt, (err, hash) => {
+      if (err) {
+        console.error("Erreur lors du hachage du nouveau mot de passe :", err);
+        res
+          .status(500)
+          .json({ error: "Erreur lors de la modification du mot de passe" });
+        return;
+      }
+
+      // Mettre à jour le mot de passe haché dans la base de données
+      const sql = "UPDATE users SET password = ? WHERE id = ?";
+      db.query(sql, [hash, userId], (err, result) => {
+        if (err) {
+          console.error(
+            "Erreur lors de la mise à jour du mot de passe du client :",
+            err
+          );
+          res.status(500).json({
+            error: "Erreur lors de la modification du mot de passe",
+          });
+          return;
+        }
+        if (result.affectedRows === 0) {
+          res.status(404).json({ error: "Client non trouvé" });
+          return;
+        }
+        console.log("Mot de passe du client mis à jour avec succès");
+        res.json({ message: "Mot de passe  mis à jour avec succès" });
+      });
+    });
+  });
 });
 
 module.exports = router;

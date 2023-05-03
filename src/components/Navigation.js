@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isNavigationOpen, setIsNavigationOpen] = useState(false);
@@ -9,10 +8,26 @@ const Navigation = () => {
   };
 
   const userName = localStorage.getItem("name");
+  const navigate = useNavigate();
+
+  const handleUserButtonClick = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/mon-compte");
+    } else {
+      navigate("/créer-un-compte");
+    }
+  };
 
   return (
     <div className="nav-container">
-      <span>{userName}</span>
+      <div id="userCo">
+        <button onClick={handleUserButtonClick}>
+          <img src="./img/user.svg" alt="Icone compte" height="20px" />
+        </button>
+
+        {userName}
+      </div>
       <div className="nav-btn">
         <img
           src="/img/burgerBtn.svg.png"

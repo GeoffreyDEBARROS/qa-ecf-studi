@@ -1,6 +1,7 @@
 .nav-container {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    align-items: center;
 
     .nav-btn {
         margin: 20px 20px 0 0;
@@ -47,4 +48,24 @@
 
 .nav-display {
     transform: translateX(0px);
+}
+
+#userCo {
+    padding-left: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: $color3;
+
+    button {
+        border: none;
+        margin-right: 10px;
+        font-size: 1.9rem;
+        background: transparent;
+        transition: 0.1s;
+
+        &:active {
+            transform: scale(95%);
+        }
+    }
 }

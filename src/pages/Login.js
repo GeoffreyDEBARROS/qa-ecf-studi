@@ -1,18 +1,20 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [id, setId] = useState("");
   const [token, setToken] = useState("");
 
-  localStorage.setItem("token", token);
-  localStorage.setItem("name", name);
-  
+  const navigate = useNavigate();
+
+  localStorage.setItem("id", id);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -22,6 +24,15 @@ const Login = () => {
       });
       setName(response.data.name);
       setToken(response.data.token);
+      setId(response.data.id);
+      localStorage.setItem("name", response.data.name);
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("id", response.data.id);
+      setEmail("");
+      setPassword("");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     } catch (error) {
       console.error(error);
     }
@@ -51,8 +62,7 @@ const Login = () => {
 
           <button type="submit">Connexion</button>
 
-          {name && <p>Bonjour, {name}!</p>}
-          {token && <p>Votre token est: {token}</p>}
+          {name && <p id="connectionSuccess">Connexion réussi !</p>}
         </form>
       </div>
       <div className="sign-in-container">
