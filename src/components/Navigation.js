@@ -8,6 +8,8 @@ const Navigation = () => {
   };
 
   const userName = localStorage.getItem("name");
+  const userId = localStorage.getItem("id");
+  const isAdmin = userId === "120";
   const navigate = useNavigate();
 
   const handleUserButtonClick = () => {
@@ -28,6 +30,10 @@ const Navigation = () => {
 
         {userName}
       </div>
+
+      <NavLink to="/administration">
+        {isAdmin && <button id="adminBtn">Admin</button>}
+      </NavLink>
       <div className="nav-btn">
         <img
           src="/img/burgerBtn.svg.png"

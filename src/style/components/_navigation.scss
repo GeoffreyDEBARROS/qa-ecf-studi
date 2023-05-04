@@ -3,6 +3,14 @@
     justify-content: space-between;
     align-items: center;
 
+    #adminBtn {
+        padding: 4px;
+        border: none;
+        background: $color4;
+        color: $color2;
+        border-radius: 3px;
+    }
+
     .nav-btn {
         margin: 20px 20px 0 0;
         transition: 0.1s;

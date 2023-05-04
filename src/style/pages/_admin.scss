@@ -1,0 +1,50 @@
+.admin-container {
+    padding: 0 10px;
+    max-width: 450px;
+    min-width: 325px;
+    h3 {
+        text-align: center;
+        color: $color4;
+    }
+    h5 {
+        color: $color4;
+        margin: 20px 0 10px 0;
+    }
+    .card-cat {
+        display: flex;
+        flex-direction: column;
+        .item-container {
+            display: flex;
+            justify-content: space-evenly;
+
+            input {
+                padding: 2px;
+                margin: 1px 0;
+                border: none;
+                background: $color3;
+                color: $color2;
+                border-radius: 5px;
+            }
+            .item-name {
+                width: 250px;
+            }
+            .price {
+                width: 40px;
+            }
+            button {
+                width: 30px;
+                margin: 1px;
+                border: none;
+                background: $color1;
+                border-radius: 5px;
+                color: $color3;
+            }
+        }
+
+    }
+    p {
+        color: green;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
