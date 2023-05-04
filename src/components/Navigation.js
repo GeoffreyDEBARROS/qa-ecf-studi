@@ -17,7 +17,7 @@ const Navigation = () => {
     if (token) {
       navigate("/mon-compte");
     } else {
-      navigate("/créer-un-compte");
+      navigate("/connexion");
     }
   };
 
