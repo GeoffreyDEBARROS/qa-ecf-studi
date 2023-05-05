@@ -3,6 +3,13 @@
     border-bottom: 2px dashed $color3;
     margin-bottom: 20px;
 
+    @media screen and (min-width:605px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+
     h1 {
         text-align: center;
         padding: 0 10px;
@@ -13,6 +20,11 @@
 
     img {
         transform: translateX(-215px);
+
+        @media screen and (min-width:605px) {
+            transform: translateX(0);
+            animation: homeImg infinite 20s linear alternate;
+        }
     }
 
     .btn-container {
@@ -42,3 +54,12 @@
 }
 
 
+@keyframes homeImg {
+    from {
+        transform: scale(90%);
+    }
+
+    to {
+        transform: scale(110%);
+    }
+}

@@ -3,6 +3,10 @@
     justify-content: space-between;
     align-items: center;
 
+    @media screen and (min-width:605px) {
+        
+    }
+
     #adminBtn {
         padding: 4px;
         border: none;
@@ -14,6 +18,10 @@
     .nav-btn {
         margin: 20px 20px 0 0;
         transition: 0.1s;
+
+        @media screen and (min-width:605px) {
+            display: none;
+        }
         
         &:active {
             transform: scale(95%);
@@ -29,9 +37,20 @@
     transition: 0.5s;
     z-index: 100;
 
+    @media screen and (min-width:605px) {
+        transform: translateX(0);
+        position: static;
+        width: 510px;
+    }
+
     ul {
         display: flex;
         flex-direction: column;
+
+        @media screen and (min-width:605px) {
+            flex-direction: row;
+            width: 100%;
+        }
 
         li {
             display: flex;
@@ -50,6 +69,15 @@
             font-weight: bold;
             color: rgba(0, 0, 0, 0.706);
             transition: 0.2s;
+
+            @media screen and (min-width:605px) {
+                height: 40px;
+                font-size: 1rem;
+                margin: 0 10px;
+                background: none;
+                width: 160px;
+                
+            }
         }
     }
 }
