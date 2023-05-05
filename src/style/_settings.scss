@@ -54,6 +54,11 @@ form {
         color:$color4;
         text-align: center;
 
+        &::placeholder {
+            color: #614124b3;
+            font-size: 0.7rem;
+        }
+
         &:focus {
             border: 2px solid $color3;
             outline: none;
@@ -78,5 +83,11 @@ form {
         &:active {
             transform: scale(95%);
         }
+    }
+
+    #error {
+        color: $color4;
+        text-align: center; 
+        margin-top: 10px;
     }
 }

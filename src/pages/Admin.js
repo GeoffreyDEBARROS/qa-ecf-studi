@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navigation from "../components/Navigation";
+import AdminSchedule from "../components/AdminSchedule";
 
 const Admin = () => {
   const [starters, setStarters] = useState([]);
@@ -40,6 +41,7 @@ const Admin = () => {
         console.log(error);
       });
   }, []);
+
   // Fonction pour modifier les entrées //
   const updateStarter = (item) => {
     axios
@@ -91,14 +93,14 @@ const Admin = () => {
       <Navigation />
       <h2>Administration</h2>
       <div className="admin-panel">
-        <div className="admin-container">
+        <div className="admin-card">
           <h3>La carte</h3>
           <div className="card-cat">
             <h5>Les entrées</h5>
             {starters.map((item, index) => (
               <div className="item-container" key={index}>
                 <input
-                className="item-name"
+                  className="item-name"
                   type="text"
                   value={item.starter}
                   onChange={(e) =>
@@ -144,7 +146,7 @@ const Admin = () => {
             {dishes.map((item, index) => (
               <div className="item-container" key={index}>
                 <input
-                className="item-name"
+                  className="item-name"
                   type="text"
                   value={item.dishe}
                   onChange={(e) =>
@@ -189,7 +191,7 @@ const Admin = () => {
             {desserts.map((item, index) => (
               <div className="item-container" key={index}>
                 <input
-                className="item-name"
+                  className="item-name"
                   type="text"
                   value={item.dessert}
                   onChange={(e) =>
@@ -231,6 +233,7 @@ const Admin = () => {
           </div>
         </div>
       </div>
+      <AdminSchedule />
     </div>
   );
 };

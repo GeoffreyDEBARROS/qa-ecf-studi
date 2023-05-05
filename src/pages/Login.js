@@ -22,6 +22,7 @@ const Login = () => {
         email,
         password,
       });
+
       setName(response.data.name);
       setToken(response.data.token);
       setId(response.data.id);

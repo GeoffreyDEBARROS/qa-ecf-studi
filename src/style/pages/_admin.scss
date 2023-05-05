@@ -1,10 +1,11 @@
-.admin-container {
+.admin-card, .admin-schedule {
     padding: 0 10px;
     max-width: 450px;
     min-width: 325px;
     h3 {
         text-align: center;
         color: $color4;
+        margin-top: 20px;
     }
     h5 {
         color: $color4;
@@ -21,7 +22,7 @@
                 padding: 2px;
                 margin: 1px 0;
                 border: none;
-                background: $color3;
+                background: $color4;
                 color: $color2;
                 border-radius: 5px;
             }
@@ -46,6 +47,6 @@
     p {
         color: green;
         text-align: center;
-        margin-top: 10px;
+        // margin-top: 10px;
     }
 }

@@ -1,0 +1,39 @@
+.admin-schedule {
+    
+    h4 {
+        color: $color4;
+    }
+    .day-container {
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            
+            .schedule-container {
+                height: 45px;
+            }
+    
+            input {
+                width: 60px;
+                padding: 2px;
+                margin: 0 3px ;
+                border: none;
+                background: $color3;
+                color: $color2;
+                border-radius: 5px;
+            }
+            button {
+                width: 42px;
+                height: 42px;
+                margin: 1px;
+                border: none;
+                background: $color1;
+                border-radius: 5px;
+                color: $color3;
+                align-self: center;
+            }
+        }
+    }
+    
+   
+}

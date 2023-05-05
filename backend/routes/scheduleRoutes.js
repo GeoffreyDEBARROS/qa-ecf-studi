@@ -13,10 +13,6 @@ const db = mysql.createConnection({
 router.put("/schedule/:days", (req, res) => {
   const days = req.params.days;
   const { morning_open, morning_close, evening_open, evening_close } = req.body;
-  // morning_open = "11:30:00";
-  // morning_close = "15:00:00";
-  // evening_open = "18:30:00";
-  // evening_close = "23:00:00";
   // Requête SQL pour mettre à jour les horaires du restaurant dans la table
   const sql = `
       UPDATE schedule
