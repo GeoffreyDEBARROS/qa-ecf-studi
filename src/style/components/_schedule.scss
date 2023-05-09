@@ -5,6 +5,10 @@
     border-top: 2px dashed $color3;
     margin-top: 10px;
 
+    @media screen and (min-width:605px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .days {
         color: $color4;
         padding: 10px;
@@ -30,6 +34,15 @@
 
         &:active {
             transform: scale(95%);
+        }
+
+        @media screen and (min-width:605px) {
+            &:hover {
+                cursor: pointer;
+                color: $color1;
+                font-size: 1.5rem;
+                letter-spacing: 5px;
+            }
         }
     }
 }

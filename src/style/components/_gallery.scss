@@ -7,12 +7,29 @@
     img {
         border-radius: 5px;
     }
-
+    .pics1, .pics2, .pics3, .pics4 {
+        position: relative;
+        &:hover::after {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.787);
+        }
+    }
     .pics1 {
         transform: translateX(100px);
         transition: 0.3s;
+        
         &:hover {
             transform: translateX(0) scale(120%);
+        }
+        &:hover::after {
+            position: absolute;
+            content: "Poulet épicé";  
         }
     }
     .pics2 {
@@ -22,6 +39,10 @@
         &:hover {
             transform: translateX(0) scale(120%);
         }
+        &:hover::after {
+            position: absolute;
+            content: "Poulet au citron";  
+        }
     }
     .pics3 {
         transform: translateX(100px);
@@ -30,6 +51,10 @@
             transform: translateX(0) scale(120%);
             z-index: 10;
         }
+        &:hover::after {
+            position: absolute;
+            content: "Blanc de poulet grillé";  
+        }
     }
     .pics4 {
         transform: translateX(-100px);
@@ -37,6 +62,26 @@
         &:hover {
             transform: translateX(0) scale(120%);
             z-index: 10;
+        }
+        &:hover::after {
+            position: absolute;
+            content: "Poulet rotis";  
+        }
+    }
+
+    @media screen and (min-width:605px) {
+        display: flex;
+        align-items: center;
+        height: 300px;
+
+        .pics1, .pics2, .pics3, .pics4 {
+            position: relative;
+            transform: translateX(0);
+            &:hover {
+                z-index: 100;
+                transform: scale(145%);
+            }
+           
         }
     }
 }

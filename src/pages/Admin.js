@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navigation from "../components/Navigation";
 import AdminSchedule from "../components/AdminSchedule";
+import AdminReservations from "../components/AdminReservations";
 
 const Admin = () => {
   const [starters, setStarters] = useState([]);
@@ -233,6 +234,7 @@ const Admin = () => {
           </div>
         </div>
       </div>
+      <AdminReservations />
       <AdminSchedule />
     </div>
   );

@@ -49,6 +49,19 @@
             &:active {
                 transform: scale(95%);
             }
+
+            @media screen and (min-width:605px) {
+                width: 200px;
+                height: 70px;
+                font-size: 1.2rem;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $color1;
+                    font-size: 1.5rem;
+                    letter-spacing: 5px;
+                }
+            }
         }
     }
 }

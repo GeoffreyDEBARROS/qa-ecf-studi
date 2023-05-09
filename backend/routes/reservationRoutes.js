@@ -62,4 +62,51 @@ router.post("/reservations", (req, res) => {
   });
 });
 
+///   Route pour récupérer les réservations   ///
+router.get("/reservations", (req, res) => {
+  const query = "SELECT * FROM reservation";
+  db.query(query, (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({
+        message:
+          "Une erreur s'est produite lors de la récupération des réservations",
+      });
+      return;
+    }
+
+    res.status(200).json(results);
+  });
+});
+///
+
+///   Route pour supprimer une réservation   ///
+router.delete("/reservations/:id", (req, res) => {
+  const id = req.params.id;
+  const query = "DELETE FROM reservation WHERE id = ?";
+  db.query(query, [id], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({
+        message:
+          "Une erreur s'est produite lors de la suppression de la réservation",
+      });
+      return;
+    }
+
+    if (results.affectedRows === 0) {
+      res.status(404).json({
+        message: "La réservation avec l'ID fourni n'a pas été trouvée",
+      });
+      return;
+    }
+
+    res.status(200).json({ message: "La réservation a été supprimée avec succès" });
+  });
+});
+
+
+
+
+
 module.exports = router;

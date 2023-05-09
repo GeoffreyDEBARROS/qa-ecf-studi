@@ -1,0 +1,42 @@
+.admin-reservations {
+    margin: 15px;
+    h3 {
+        text-align: center;
+        margin: 15px 10px;
+        color: $color4;
+    }
+    .item-container {
+        display: flex;
+        .item {
+            margin: 4px;
+        }
+        .hour {
+            color: $color3;
+            width: 39px;
+        }
+        .date {
+            color: $color4;
+        }
+        .number {
+            color: $color3;
+            font-size: 0.8rem;
+        }
+        .email {
+            color: $color4;
+            font-size: 0.8rem;
+        }
+        button {
+            padding: 2px;
+            height: 25px;
+            width: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 5px;
+            background: $color1;
+            color: red;
+            margin-left: 10px;
+        }
+    }
+}

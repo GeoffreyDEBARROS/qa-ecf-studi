@@ -40,7 +40,7 @@
     @media screen and (min-width:605px) {
         transform: translateX(0);
         position: static;
-        width: 510px;
+        width: 650px;
     }
 
     ul {
@@ -49,7 +49,6 @@
 
         @media screen and (min-width:605px) {
             flex-direction: row;
-            width: 100%;
         }
 
         li {
@@ -73,10 +72,29 @@
             @media screen and (min-width:605px) {
                 height: 40px;
                 font-size: 1rem;
-                margin: 0 10px;
                 background: none;
-                width: 160px;
+                margin-right: 5px;
+                width: 170px;
+                position: relative;
+                transition: 0.1s;
                 
+                
+                &:hover {
+                    cursor: pointer;
+                    
+                }
+                &:hover::after {
+                    content: "";
+                    position: absolute;
+                    width: 50px;
+                    height: 4px;
+                    background: $color1;
+                    top: 32px;
+                }
+                &:active {
+                    color: $color1;
+                    transform: scale(95%);
+                }
             }
         }
     }
@@ -102,6 +120,16 @@
 
         &:active {
             transform: scale(95%);
+        }
+    }
+
+    @media screen and (min-width:605px) {
+        font-size: 1.1rem;
+        button {
+            &:hover {
+                cursor: pointer;
+                transform: scale(104%);
+            }
         }
     }
 }

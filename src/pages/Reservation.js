@@ -7,20 +7,21 @@ function Reservation() {
   const [date, setDate] = useState("");
   const [hour, setHour] = useState("");
   const [email, setEmail] = useState("");
-  const [guests, setGuests] = useState("");
+  const [default_guests, setDefault_guests] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     axios
       .post("http://localhost:3001/reservations", {
         date,
         hour,
         email,
-        guests,
+        default_guests,
       })
       .then((response) => {
-        console.log(response.data.message);
+        setMessage(response.data.message);
       })
       .catch((error) => {
         setMessage(error.response.data.message);
@@ -63,13 +64,14 @@ function Reservation() {
         <input
           type="number"
           id="guests"
-          value={guests}
-          onChange={(event) => setGuests(event.target.value)}
+          value={default_guests}
+          onChange={(event) => setDefault_guests(event.target.value)}
           required
         />
 
         <button type="submit">Réserver</button>
-        {message && <p>{message}</p>}
+
+        {message && <p id="reservation-msg">{message}</p>}
       </form>
       <Footer />
     </div>
