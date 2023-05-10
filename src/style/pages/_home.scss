@@ -4,9 +4,9 @@
     margin-bottom: 20px;
 
     @media screen and (min-width:605px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         height: 100%;
     }
 
@@ -16,16 +16,32 @@
         letter-spacing: 1.5px;
         font-size: 2.2rem;
         color: $color4;
+
+        @media screen and (min-width:605px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            position: relative;
+
+            &::after {
+                content: "le meilleur du poulet";
+                position: absolute;
+                top: 360px;
+                font-size: 1.5rem;
+                color: $color3;
+            }
+        }
     }
 
     img {
         transform: translateX(-215px);
 
         @media screen and (min-width:605px) {
-            transform: translateX(0);
-            animation: homeImg infinite 20s linear alternate;
+            transform: translateX(-215px) scale(115%);
+            margin-top: 40px;
         }
-    }
+    } 
 
     .btn-container {
         display: flex;

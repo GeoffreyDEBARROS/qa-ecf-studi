@@ -40,7 +40,7 @@ const Card = () => {
       <Navigation />
       <div className="card">
         <h2>La carte</h2>
-        <div className="starter-container">
+        <div className="container">
           <h3>Les entrées</h3>
           {starters.map((item, index) => (
             <div className="item-container" key={index}>
@@ -50,7 +50,7 @@ const Card = () => {
           ))}
         </div>
 
-        <div className="dishes-container">
+        <div className="container">
           <h3>Les plats</h3>
           {dishes.map((item, index) => (
             <div className="item-container" key={index}>
@@ -60,7 +60,7 @@ const Card = () => {
           ))}
         </div>
 
-        <div className="dessert-container">
+        <div className="container">
           <h3>Les desserts</h3>
           {dessert.map((item, index) => (
             <div className="item-container" key={index}>
@@ -69,7 +69,13 @@ const Card = () => {
             </div>
           ))}
         </div>
+        <img
+          src={require("../assets/img/Sans titre (4).png")}
+          alt="Tenders de poulet"
+          height="400px"
+        />
       </div>
+      
       <Footer />
     </div>
   );

@@ -7,6 +7,7 @@ const Account = () => {
   const userId = localStorage.getItem("id");
   const [userCo, setUserCo] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
+  const [message, setMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -28,6 +29,7 @@ const Account = () => {
       .put(`http://localhost:3001/users/${userId}/name`, { name: userCo.name })
       .then((res) => console.log(res))
       .catch((err) => console.error(err));
+    setMessage("Prénom modifée");
   };
   //
 
@@ -45,6 +47,7 @@ const Account = () => {
       })
       .then((res) => console.log(res))
       .catch((err) => console.error(err));
+    setMessage("Adresse email modifée");
   };
   //
 
@@ -62,10 +65,11 @@ const Account = () => {
       })
       .then((res) => console.log(res))
       .catch((err) => console.error(err));
+    setMessage("Nb de convives modifié");
   };
   //
 
-  // Fonction pour modifier le mot de passe de convives par défaut du client //
+  // Fonction pour modifier le mot de passe du client //
   const updatePassword = () => {
     axios
       .put(`http://localhost:3001/users/${userId}/password`, {
@@ -73,6 +77,7 @@ const Account = () => {
       })
       .then((res) => console.log(res))
       .catch((err) => console.error(err));
+    setMessage("Mot de passe modifié");
   };
 
   const handlePasswordChange = (event) => {
@@ -164,6 +169,7 @@ const Account = () => {
             Supprimer mon compte
           </button>
         </div>
+        {message && <p id="success-msg">{message}</p>}
       </div>
     </div>
   );

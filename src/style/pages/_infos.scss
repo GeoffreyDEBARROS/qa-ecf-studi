@@ -1,7 +1,11 @@
 .infos-container {
-    padding: 10px;
+    padding: 10px; 
     p {
         color: $color4;
+        @media screen and (min-width:605px) {
+                text-align: center;
+                font-size: 1.2rem;
+        }
     }
     .contact-container {
         margin-top: 20px;
@@ -26,6 +30,30 @@
                 }
             }
         }
+
+        @media screen and (min-width:605px) {
+                margin-top: 80px;
+
+                ul{
+                    li{
+                        margin: 40px;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+        }
+    }
+    #chicken {
+       display: none;
+
+       @media screen and (min-width:605px) {
+        display: block;
+        position: absolute;
+        bottom: 40px;
+        right: 20px;
+        opacity: 0.35;
+       }
     }
     
 }

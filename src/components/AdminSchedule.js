@@ -27,44 +27,46 @@ const AdminSchedule = () => {
 
   return (
     <div className="admin-schedule">
-      <h3>Les horaires</h3>
-      {schedule.map((day) => (
-        <div key={day.days} className="day-container">
-          <h4>{day.days}</h4>
-          <form onSubmit={(event) => handleFormSubmit(event, day.days)}>
-            <div className="schedule-container">
-              <label htmlFor="morning_open">Matin :</label>
-              <input
-                type="text"
-                id="morning_open"
-                defaultValue={day.morning_open}
-              />
+      
+      <div className="schedule-container">
+        {schedule.map((day) => (
+          <div key={day.days} className="day-container">
+            <h4>{day.days}</h4>
+            <form onSubmit={(event) => handleFormSubmit(event, day.days)}>
+              <div className="schedule-container">
+                <label htmlFor="morning_open">Matin :</label>
+                <input
+                  type="text"
+                  id="morning_open"
+                  defaultValue={day.morning_open}
+                />
 
-              <input
-                type="text"
-                id="morning_close"
-                defaultValue={day.morning_close}
-              />
-            </div>
-            <div className="schedule-container">
-              <label htmlFor="evening_open">Soirée :</label>
-              <input
-                type="text"
-                id="evening_open"
-                defaultValue={day.evening_open}
-              />
+                <input
+                  type="text"
+                  id="morning_close"
+                  defaultValue={day.morning_close}
+                />
+              </div>
+              <div className="schedule-container">
+                <label htmlFor="evening_open">Soirée :</label>
+                <input
+                  type="text"
+                  id="evening_open"
+                  defaultValue={day.evening_open}
+                />
 
-              <input
-                type="text"
-                id="evening_close"
-                defaultValue={day.evening_close}
-              />
-            </div>
+                <input
+                  type="text"
+                  id="evening_close"
+                  defaultValue={day.evening_close}
+                />
+              </div>
 
-            <button type="submit"> &#x2714;</button>
-          </form>
-        </div>
-      ))}
+              <button type="submit"> &#x2714;</button>
+            </form>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

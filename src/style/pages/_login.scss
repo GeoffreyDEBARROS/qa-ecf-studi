@@ -4,7 +4,17 @@
         letter-spacing: 1.5px;
         color: $color4;
         text-align: center;
-    }  
+    }
+    
+    button {
+        &:hover {
+            cursor: pointer;
+            transform: scale(101%);
+        }
+        &:active {
+            transform: scale(95%);
+        }
+    }
    
     }
 

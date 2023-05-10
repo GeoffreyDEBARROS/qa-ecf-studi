@@ -5,7 +5,7 @@ const Infos = () => {
   return (
     <div>
       <Navigation />
-      <h2>Information</h2>
+      <h2>Informations</h2>
       <div className="infos-container">
         <p>
           Le quai antique est un restaurant situé à Chambéry, spécialisé dans la
@@ -43,6 +43,13 @@ const Infos = () => {
             </li>
           </ul>
         </div>
+        <img
+          id="chicken"
+          src={require("../assets/img/chicken.png")}
+          alt="Un plat"
+          height="500px"
+          width="800px"
+        />
       </div>
     </div>
   );

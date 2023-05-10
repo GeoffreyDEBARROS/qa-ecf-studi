@@ -10,7 +10,6 @@ const Home = () => {
       <Navigation />
       <div className="home">
         <h1>LE QUAI ANTIQUE</h1>
-
         <img
           src={require("../assets/img/home.png")}
           alt="Un plat"

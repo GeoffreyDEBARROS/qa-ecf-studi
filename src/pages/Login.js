@@ -10,6 +10,7 @@ const Login = () => {
   const [name, setName] = useState("");
   const [id, setId] = useState("");
   const [token, setToken] = useState("");
+ 
 
   const navigate = useNavigate();
 
@@ -33,9 +34,9 @@ const Login = () => {
       setPassword("");
       setTimeout(() => {
         navigate("/");
-      }, 2000);
+      }, 1500);
     } catch (error) {
-      console.error(error);
+      console.error(error); 
     }
   };
 

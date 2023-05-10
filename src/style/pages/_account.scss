@@ -40,6 +40,14 @@
                 font-family: font1;
                 background: $color1;
                 color: $color4;
+                
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(102%);
+                }
+                &:active {
+                    transform: scale(95%);
+                }
             }
         }
 
@@ -52,7 +60,21 @@
             margin-top: 10px;
             background: rgba(255, 0, 0, 0.584);
             font-weight: bold;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(102%);
+                background: red;
+            }
+            &:active {
+                transform: scale(95%);
+            }
         }
+    }
+
+    #success-msg {
+        text-align: center;
+        color: green;
     }
 }
 

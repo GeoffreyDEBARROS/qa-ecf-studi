@@ -3,9 +3,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @media screen and (min-width:605px) {
-        
-    }
+    
 
     #adminBtn {
         padding: 4px;
@@ -13,6 +11,10 @@
         background: $color4;
         color: $color2;
         border-radius: 3px;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .nav-btn {

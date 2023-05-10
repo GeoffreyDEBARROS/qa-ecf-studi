@@ -83,10 +83,13 @@ form {
         color: $color2;
         background: $color3;
         transition: 0.2s;
-        
-        &:active {
-            transform: scale(95%); 
-        }
+            &:hover {
+                cursor: pointer;
+                transform: scale(101%);
+            }
+            &:active {
+                transform: scale(95%);
+            }           
     }
 
     #error {

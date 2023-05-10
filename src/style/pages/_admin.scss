@@ -1,6 +1,5 @@
 .admin-card, .admin-schedule {
     padding: 0 10px;
-    max-width: 450px;
     min-width: 325px;
     h3 {
         text-align: center;
@@ -47,6 +46,13 @@
     p {
         color: green;
         text-align: center;
-        // margin-top: 10px;
+    }
+}
+
+@media screen and (min-width:605px) {
+    .admin-panel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

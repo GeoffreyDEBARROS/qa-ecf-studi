@@ -162,7 +162,7 @@ const Admin = () => {
                 />
                 <input
                   className="price"
-                  type="text"
+                  type="text" 
                   value={item.price}
                   onChange={(e) =>
                     setDishes((prevState) =>
