@@ -1,18 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
 function Reservation() {
+  const userId = localStorage.getItem("id");
+  const [userCo, setUserCo] = useState("");
   const [date, setDate] = useState("");
   const [hour, setHour] = useState("");
   const [email, setEmail] = useState("");
   const [default_guests, setDefault_guests] = useState("");
   const [message, setMessage] = useState("");
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3001/users/${userId}`)
+      .then((res) => setUserCo(res.data.client));
+  }, []);
+
+  useEffect(() => {
+    if (userCo) {
+      setEmail(userCo.email);
+      document.getElementById("email").setAttribute("disabled", "disabled");
+      setDefault_guests(userCo.default_guests);
+    }
+  }, [userCo]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
     axios
       .post("http://localhost:3001/reservations", {
         date,
